@@ -1,0 +1,21 @@
+.main-logo {
+  background-repeat: no-repeat;
+  object-fit: contain;
+  transition: none;
+  height: 200px;
+}
+
+.container-fluid {
+  padding: calc(var(--bs-gutter-x) * 0.5);
+}
+
+.main-container {
+  width: 90%;
+  height: 90%;
+
+  @media (min-width: var(--display-md)) {
+    .main-container {
+      width: 50%;
+    }
+  }
+}

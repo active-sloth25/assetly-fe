@@ -1,0 +1,26 @@
+<li class="sidebar-item">
+  @if (navItem().pages.length === 0) {
+  <a [routerLink]="navItem().routeUrl" routerLinkActive="active-tab" [routerLinkActiveOptions]="{exact:true}"
+    class="sidebar-link">
+    <i class="sidelink-icon" [class]="navItem().icon"></i>
+    <span>{{navItem().heading}}</span>
+  </a>
+  }@else {
+  <a class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
+    [attr.data-bs-target]="'#collapse' + navItem().heading" aria-expanded="false"
+    [attr.aria-controls]="'#collapse' + navItem().heading">
+    <i class="sidelink-icon" [class]="navItem().icon"></i>
+    <span>{{navItem().heading}}</span>
+  </a>
+  <ul [id]="'collapse' + navItem().heading" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+    @for (item of navItem().pages; track $index) {
+    <li class="sidebar-item">
+      <a class="sidebar-link sub-item" [routerLink]="item.routeUrl" routerLinkActive="active-tab"
+        [routerLinkActiveOptions]="{exact:true}">
+        <i class="sidelink-icon" [class]="item.icon"></i>
+        <span>{{item.heading}}</span></a>
+    </li>
+    }
+  </ul>
+  }
+</li>

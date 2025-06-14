@@ -1,0 +1,7 @@
+.text-hover{
+    cursor: pointer;
+    text-decoration: underline;
+    &:hover{
+        text-decoration: none;
+    }
+}

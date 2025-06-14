@@ -1,0 +1,15 @@
+@if(isMobileView()){
+<div class="toggle-btn" [class]="containerClassList()">
+  <img [class]="classList()" alt="logo-main" src="/images/logo-mobile-blanco.svg">
+</div>
+}@else {
+<div class="toggle-btn text-center" [class]="containerClassList()">
+  @if (expanded()) {
+  <img [class]="classList()" alt="logo-main" src="/images/logo-mobile-blanco.svg">
+  }
+  @else {
+  <img [class]="classList()" class="w-75" alt="logo-white" src="/images/logo-mobile-blanco.svg">
+  }
+</div>
+
+}

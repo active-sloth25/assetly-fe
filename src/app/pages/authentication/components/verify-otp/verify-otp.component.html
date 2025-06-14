@@ -1,0 +1,25 @@
+<main class=" d-flex flex-column justify-content-center align-items-center h-100">
+    <span>
+        <h3 class="text-center">Enter your OTP</h3>
+        <p>OTP has been sent to your phone number</p>
+    </span>
+
+    <form [formGroup]="otpForm" class="w-50 d-flex flex-column gap-3 justify-content-center">
+        <div class="vstack gap-1">
+            <app-input [controlName]="getFormControl('otp')" [name]="'otp'" [type]="'text'"
+                [placeholder]="'Enter OTP'" />
+            <span class="align-self-end">
+                <app-button [label]="'Resend OTP'" [classList]="'btn btn-link p-0'" [labelClassList]="'text-sm'"
+                    (onClick)=" resendOTP()" [disabled]="resendOtpLoader || submitLoader"
+                    [showSpinner]="resendOtpLoader" />
+            </span>
+
+        </div>
+        <span class="vstack gap-1">
+            <app-button [label]="'Submit'" [classList]="'btn btn-primary w-100'" [type]="'submit'"
+                [disabled]="!otpForm.valid || submitLoader || resendOtpLoader" (onClick)=" onSubmit()"
+                [showSpinner]="submitLoader" />
+            <p class="text-end text-sm">Back to <span class="text-hover" (click)="navigateToSignIn()">Sign-In</span></p>
+        </span>
+    </form>
+</main>

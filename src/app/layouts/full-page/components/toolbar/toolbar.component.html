@@ -1,0 +1,6 @@
+<nav class="navbar bg-toolbar" id="toolbar" [class]="classList()">
+  <div class="container-fluid">
+    <app-button [classList]="' rounded-circle border-none'" [icon]="'fa-solid fa-bars '" (onClick)="toggleSidebar()" />
+    <app-profile-dropdown/>
+  </div>
+</nav>

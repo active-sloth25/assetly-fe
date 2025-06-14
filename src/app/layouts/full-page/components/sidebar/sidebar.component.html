@@ -1,0 +1,10 @@
+<aside id="sidebar" class="bg-primary" [ngClass]="{'expand':showSidebar()}">
+  <app-branding [expanded]="showSidebar()" [classList]="'logo-img'" [containerClassList]="'mt-2'" />
+
+  <ul class="sidebar-nav">
+    @for (item of navList; track $index) {
+    <app-nav-item [navItem]="item" />
+    }
+  </ul>
+  <!-- <app-nav-footer /> -->
+</aside>
